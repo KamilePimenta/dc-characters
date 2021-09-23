@@ -1,12 +1,38 @@
 * {
+  position: relative;
   margin: 0;
   padding: 0;
+  z-index: 1;
 }
 
 body {
-  color: $text;
-  font: 14px 'Ubuntu', Arial, Helvetica, sans-serif;
+  font: 12px 'Ubuntu', Arial, Helvetica, sans-serif;
   line-height: 1.4em;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+p {
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 0;
+}
+
+.clear {
+  &::after {
+    content: '';
+    display: table;
+    height: 0;
+    clear: both;
+  }
 }
