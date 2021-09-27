@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      darkmode: false,
+      darkmode: true,
     };
   },
 };
@@ -126,10 +126,10 @@ export default {
     -moz-border-radius: 60px;
     -o-border-radius: 60px;
     border-radius: 60px;
-    -webkit-box-shadow: 0 6px 6px rgba(0,0,0,0.02);
-    -moz-box-shadow: 0 6px 6px rgba(0,0,0,0.02);
-    -o-box-shadow: 0 6px 6px rgba(0,0,0,0.02);
-    box-shadow: 0 6px 6px rgba(0,0,0,0.02);
+    -webkit-box-shadow: 0 6px 6px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 6px 6px rgba(0,0,0,0.2);
+    -o-box-shadow: 0 6px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 6px rgba(0,0,0,0.2);
 
     .image {
       &::before {
