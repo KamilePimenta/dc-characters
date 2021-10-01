@@ -1,5 +1,5 @@
 <template>
-  <div :class="`card ${data.color} ${darkmode ? 'dark' : 'light'}`">
+  <div :class="`card ${data.color} ${darkMode ? 'dark' : 'light'}`">
     <figure class="image">
       <img
         :src="require(`../assets/img/${data.slug}.png`)"
@@ -22,11 +22,7 @@ export default {
   name: "Card",
   props: {
     data: Object,
-  },
-  data() {
-    return {
-      darkmode: true,
-    };
+    darkMode: Boolean,
   },
 };
 </script>
@@ -36,6 +32,7 @@ export default {
   .bio {
     position: relative;
     padding: 32px;
+    height: 50vh;
     &::before {
       content: "";
       position: absolute;
@@ -54,8 +51,9 @@ export default {
   }
 
   .symbol {
-    float: right;
-    margin-top: 32px;
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
   }
 
   // Colors
@@ -118,18 +116,23 @@ export default {
     }
   }
 
-  @media only screen and (min-width: 414px) {
+  @media only screen and (min-width: 540px) {
     max-width: 420px;
-    margin: 0 auto;
+    margin: 40px auto;
     overflow: hidden;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
     -o-border-radius: 60px;
     border-radius: 60px;
-    -webkit-box-shadow: 0 6px 6px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0 6px 6px rgba(0,0,0,0.2);
-    -o-box-shadow: 0 6px 6px rgba(0,0,0,0.2);
-    box-shadow: 0 6px 6px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+
+    .image,
+    .bio {
+      height: calc(50vh - 40px);
+    }
 
     .image {
       &::before {
