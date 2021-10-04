@@ -31,7 +31,6 @@ export default {
   .image,
   .bio {
     position: relative;
-    padding: 32px;
     height: 50vh;
     &::before {
       content: "";
@@ -41,6 +40,46 @@ export default {
       right: 0;
       bottom: 0;
       z-index: 0;
+    }
+  }
+
+  .image {
+    border-bottom-right-radius: 60px;
+    &::before {
+      border-bottom-left-radius: 60px;
+    }
+  }
+
+  .bio {
+    padding: 32px;
+    border-top-left-radius: 60px;
+    &::before {
+      border-top-right-radius: 60px;
+    }
+
+    .text {
+      max-height: calc(50vh - 160px);
+      padding-right: 10px;
+      overflow: hidden;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        border-radius: 4px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $dcBlue;
+        border-radius: 4px;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+        cursor: pointer;
+        &:hover {
+          background-color: #2f6ed0;
+        }
+      }
     }
   }
 
@@ -66,6 +105,12 @@ export default {
       &::before {
         background-color: $white;
       }
+
+      .text {
+        &::-webkit-scrollbar-track {
+          background-color: #eaeaea;
+        }
+      }
     }
   }
   &.dark {
@@ -77,9 +122,13 @@ export default {
       &::before {
         background-color: $greyDark;
       }
+      .text {
+        &::-webkit-scrollbar-track {
+          background-color: #555555;
+        }
+      }
     }
   }
-
   &.blue {
     .image::before,
     .bio {
@@ -117,12 +166,8 @@ export default {
   }
 
   @media only screen and (min-width: 540px) {
-    max-width: 420px;
+    max-width: 380px;
     margin: 40px auto;
-    overflow: hidden;
-    -webkit-border-radius: 60px;
-    -moz-border-radius: 60px;
-    -o-border-radius: 60px;
     border-radius: 60px;
     -webkit-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
@@ -135,14 +180,36 @@ export default {
     }
 
     .image {
+      border-radius: 60px;
+      border-bottom-left-radius: 0;
+      z-index: 2;
       &::before {
-        border-bottom-left-radius: 90px;
+        border-radius: 60px;
+        border-bottom-right-radius: 0;
+      }
+
+      img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        max-width: calc(100% + 160px);
+        max-height: calc(100% + 160px);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
       }
     }
 
     .bio {
+      border-radius: 60px;
+      border-top-right-radius: 0;
       &::before {
-        border-top-right-radius: 90px;
+        border-radius: 60px;
+        border-top-left-radius: 0;
+      }
+      .text {
+        max-height: calc(50vh - 200px);
       }
     }
   }
