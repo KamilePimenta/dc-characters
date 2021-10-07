@@ -2,15 +2,16 @@
   <div :class="`card ${data.color} ${darkMode ? 'dark' : 'light'}`">
     <figure class="image">
       <img
+        class="card-img"
         :src="require(`../assets/img/${data.slug}.png`)"
         :alt="`Picture of ${data.name}`"
       />
     </figure>
     <div class="bio clear">
-      <h3 class="title">História</h3>
-      <div class="text" v-html="data.history"></div>
+      <h3 class="card-title">História</h3>
+      <div class="card-text" v-html="data.history"></div>
       <img
-        class="symbol"
+        class="card-symbol"
         :src="require(`../assets/svg/${data.slug}.svg`)"
         :alt="`Symbol of ${data.name}`"
       />
@@ -57,7 +58,7 @@ export default {
       border-top-right-radius: 60px;
     }
 
-    .text {
+    .card-text {
       max-height: calc(50vh - 160px);
       padding-right: 10px;
       overflow: hidden;
@@ -83,13 +84,13 @@ export default {
     }
   }
 
-  .title {
+  .card-title {
     margin-bottom: 24px;
     font-size: 18px;
     font-weight: bold;
   }
 
-  .symbol {
+  .card-symbol {
     position: absolute;
     right: 32px;
     bottom: 32px;
@@ -106,7 +107,7 @@ export default {
         background-color: $white;
       }
 
-      .text {
+      .card-text {
         &::-webkit-scrollbar-track {
           background-color: #eaeaea;
         }
@@ -122,7 +123,7 @@ export default {
       &::before {
         background-color: $greyDark;
       }
-      .text {
+      .card-text {
         &::-webkit-scrollbar-track {
           background-color: #555555;
         }
@@ -188,7 +189,7 @@ export default {
         border-bottom-right-radius: 0;
       }
 
-      img {
+      .card-img {
         position: absolute;
         left: 50%;
         top: 50%;
@@ -208,7 +209,7 @@ export default {
         border-radius: 60px;
         border-top-left-radius: 0;
       }
-      .text {
+      .card-text {
         max-height: calc(50vh - 200px);
       }
     }
