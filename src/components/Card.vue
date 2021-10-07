@@ -52,14 +52,14 @@ export default {
   }
 
   .bio {
-    padding: 32px;
+    padding: 32px 32px 80px;
     border-top-left-radius: 60px;
     &::before {
       border-top-right-radius: 60px;
     }
 
     .card-text {
-      height: calc(50vh - 160px);
+      height: calc(100% - 40px);
       padding-right: 10px;
       overflow: hidden;
       overflow-y: auto;
@@ -92,8 +92,8 @@ export default {
 
   .card-symbol {
     position: absolute;
-    right: 32px;
-    bottom: 32px;
+    right: 24px;
+    bottom: 24px;
   }
 
   // Colors
@@ -209,9 +209,6 @@ export default {
       &::before {
         border-radius: 60px;
         border-top-left-radius: 0;
-      }
-      .card-text {
-        max-height: calc(50vh - 200px);
       }
     }
   }
