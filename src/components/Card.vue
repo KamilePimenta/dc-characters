@@ -59,7 +59,7 @@ export default {
     }
 
     .card-text {
-      max-height: calc(50vh - 160px);
+      height: calc(50vh - 160px);
       padding-right: 10px;
       overflow: hidden;
       overflow-y: auto;
@@ -166,7 +166,7 @@ export default {
     }
   }
 
-  @media only screen and (min-width: 540px) {
+  @media only screen and (min-width: $mobile) {
     max-width: 380px;
     margin: 40px auto;
     border-radius: 60px;
@@ -178,6 +178,7 @@ export default {
     .image,
     .bio {
       height: calc(50vh - 40px);
+      max-height: 300px;
     }
 
     .image {

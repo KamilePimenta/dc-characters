@@ -64,6 +64,11 @@ export default {
       top: 20px;
       right: 20px;
       z-index: 100;
+
+      @media screen and (min-width: $mobile) {
+        top: 40px;
+        right: 40px;
+      }
     }
   }
 

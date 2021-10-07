@@ -11,7 +11,7 @@ const hero = {
 }
 
 describe('Show content of Card.vue', () => {
-  test('Validate img path and Alternative text', () => {
+  test('Validate img path and alternative text', () => {
     const wrapper = mount(Card, {
       propsData: {
         data: hero
